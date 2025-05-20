@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class Player : MonoBehaviour //플레이어와 관련된 기능들의 정보 | 플레이어
     public PlayerController controller;
 
     public PlayerCondition condition;
+
+    public ItemData itemData; //ItemObject.cs의 Interactable된 데이터 넘겨줌
+    public Action addItem; //구독이 되어 있으면 실행
+
     private void Awake()
     {
         CharacterManager.Instance.Player = this; // Charactermanager 안에 있는 Player에 나 자신 넣기
